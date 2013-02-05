@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/Pixie">
+        <file>Resources/Pixie_32x32.ico</file>
+        <file>Resources/Pixie16.png</file>
+    </qresource>
+</RCC>

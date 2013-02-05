@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- uartassistant.qdoc -->
+  <title>qesp : UartAssistant Demo</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="postheader" valign="center"><a href="index.html">Home</a> &middot; <a href="classes.html">All Classes</a> &middot;</td></tr></table><li><a href="http://qt.nokia.com/doc/4.8/all-examples.html">Examples</a></li>
+<li>UartAssistant Demo</li>
+<h1 class="title">UartAssistant Demo</h1>
+<span class="subtitle"></span>
+<!-- $$$examples/uartassistant-description -->
+<div class="descr"> <a name="details"></a>
+<p>Files:</p>
+<ul>
+<li><a href="examples-uartassistant-dialog-cpp.html">examples/uartassistant/dialog.cpp</a></li>
+<li><a href="examples-uartassistant-dialog-h.html">examples/uartassistant/dialog.h</a></li>
+<li><a href="examples-uartassistant-dialog-ui.html">examples/uartassistant/dialog.ui</a></li>
+<li><a href="examples-uartassistant-hled-cpp.html">examples/uartassistant/hled.cpp</a></li>
+<li><a href="examples-uartassistant-hled-h.html">examples/uartassistant/hled.h</a></li>
+<li><a href="examples-uartassistant-main-cpp.html">examples/uartassistant/main.cpp</a></li>
+<li><a href="examples-uartassistant-uartassistant-pro.html">examples/uartassistant/uartassistant.pro</a></li>
+</ul>
+<p>The example demonstrates how to use <a href="qextserialport.html">QextSerialPort</a>.</p>
+<p>Initialze UI element.</p>
+<pre class="cpp">    <span class="preprocessor">#ifdef Q_OS_WIN</span>
+    ui<span class="operator">-</span><span class="operator">&gt;</span>portBox<span class="operator">-</span><span class="operator">&gt;</span>addItems(<span class="type"><a href="http://qt.nokia.com/doc/4.8/qstringlist.html">QStringList</a></span>()<span class="operator">&lt;</span><span class="operator">&lt;</span><span class="string">&quot;COM1&quot;</span><span class="operator">&lt;</span><span class="operator">&lt;</span><span class="string">&quot;COM2&quot;</span><span class="operator">&lt;</span><span class="operator">&lt;</span><span class="string">&quot;COM3&quot;</span><span class="operator">&lt;</span><span class="operator">&lt;</span><span class="string">&quot;COM4&quot;</span>);
+    <span class="preprocessor">#else</span>
+    ui<span class="operator">-</span><span class="operator">&gt;</span>portBox<span class="operator">-</span><span class="operator">&gt;</span>addItems(<span class="type"><a href="http://qt.nokia.com/doc/4.8/qstringlist.html">QStringList</a></span>()<span class="operator">&lt;</span><span class="operator">&lt;</span><span class="string">&quot;/dev/ttyS0&quot;</span><span class="operator">&lt;</span><span class="operator">&lt;</span><span class="string">&quot;/dev/ttyS1&quot;</span><span class="operator">&lt;</span><span class="operator">&lt;</span><span class="string">&quot;/dev/ttyUSB0&quot;</span><span class="operator">&lt;</span><span class="operator">&lt;</span><span class="string">&quot;/dev/ttyUSB1&quot;</span>);
+    <span class="preprocessor">#endif</span>
+    <span class="comment">//make sure user can input their own port name!</span>
+    ui<span class="operator">-</span><span class="operator">&gt;</span>portBox<span class="operator">-</span><span class="operator">&gt;</span>setEditable(<span class="keyword">true</span>);
+
+    ui<span class="operator">-</span><span class="operator">&gt;</span>baudRateBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;1200&quot;</span><span class="operator">,</span> BAUD1200);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>baudRateBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;2400&quot;</span><span class="operator">,</span> BAUD2400);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>baudRateBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;4800&quot;</span><span class="operator">,</span> BAUD4800);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>baudRateBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;9600&quot;</span><span class="operator">,</span> BAUD9600);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>baudRateBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;19200&quot;</span><span class="operator">,</span> BAUD19200);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>baudRateBox<span class="operator">-</span><span class="operator">&gt;</span>setCurrentIndex(<span class="number">3</span>);
+
+    ui<span class="operator">-</span><span class="operator">&gt;</span>parityBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;NONE&quot;</span><span class="operator">,</span> PAR_NONE);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>parityBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;ODD&quot;</span><span class="operator">,</span> PAR_ODD);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>parityBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;EVEN&quot;</span><span class="operator">,</span> PAR_EVEN);
+
+    ui<span class="operator">-</span><span class="operator">&gt;</span>dataBitsBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;5&quot;</span><span class="operator">,</span> DATA_5);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>dataBitsBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;6&quot;</span><span class="operator">,</span> DATA_6);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>dataBitsBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;7&quot;</span><span class="operator">,</span> DATA_7);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>dataBitsBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;8&quot;</span><span class="operator">,</span> DATA_8);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>dataBitsBox<span class="operator">-</span><span class="operator">&gt;</span>setCurrentIndex(<span class="number">3</span>);
+
+    ui<span class="operator">-</span><span class="operator">&gt;</span>stopBitsBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;1&quot;</span><span class="operator">,</span> STOP_1);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>stopBitsBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;2&quot;</span><span class="operator">,</span> STOP_2);
+
+    ui<span class="operator">-</span><span class="operator">&gt;</span>queryModeBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;Polling&quot;</span><span class="operator">,</span> QextSerialPort<span class="operator">::</span>Polling);
+    ui<span class="operator">-</span><span class="operator">&gt;</span>queryModeBox<span class="operator">-</span><span class="operator">&gt;</span>addItem(<span class="string">&quot;EventDriven&quot;</span><span class="operator">,</span> QextSerialPort<span class="operator">::</span>EventDriven);</pre>
+<p>Initialize serial port</p>
+<pre class="cpp">    PortSettings settings <span class="operator">=</span> {BAUD9600<span class="operator">,</span> DATA_8<span class="operator">,</span> PAR_NONE<span class="operator">,</span> STOP_1<span class="operator">,</span> FLOW_OFF<span class="operator">,</span> <span class="number">10</span>};
+    port <span class="operator">=</span> <span class="keyword">new</span> QextSerialPort(ui<span class="operator">-</span><span class="operator">&gt;</span>portBox<span class="operator">-</span><span class="operator">&gt;</span>currentText()<span class="operator">,</span> settings<span class="operator">,</span> QextSerialPort<span class="operator">::</span>Polling);</pre>
+<p>port Settings</p>
+<pre class="cpp">    <span class="type">void</span> Dialog<span class="operator">::</span>onBaudRateChanged(<span class="type">int</span> idx)
+    {
+        port<span class="operator">-</span><span class="operator">&gt;</span>setBaudRate((BaudRateType)ui<span class="operator">-</span><span class="operator">&gt;</span>baudRateBox<span class="operator">-</span><span class="operator">&gt;</span>itemData(idx)<span class="operator">.</span>toInt());
+    }
+
+    <span class="type">void</span> Dialog<span class="operator">::</span>onParityChanged(<span class="type">int</span> idx)
+    {
+        port<span class="operator">-</span><span class="operator">&gt;</span>setParity((ParityType)ui<span class="operator">-</span><span class="operator">&gt;</span>parityBox<span class="operator">-</span><span class="operator">&gt;</span>itemData(idx)<span class="operator">.</span>toInt());
+    }
+
+    <span class="type">void</span> Dialog<span class="operator">::</span>onDataBitsChanged(<span class="type">int</span> idx)
+    {
+        port<span class="operator">-</span><span class="operator">&gt;</span>setDataBits((DataBitsType)ui<span class="operator">-</span><span class="operator">&gt;</span>dataBitsBox<span class="operator">-</span><span class="operator">&gt;</span>itemData(idx)<span class="operator">.</span>toInt());
+    }
+
+    <span class="type">void</span> Dialog<span class="operator">::</span>onStopBitsChanged(<span class="type">int</span> idx)
+    {
+        port<span class="operator">-</span><span class="operator">&gt;</span>setStopBits((StopBitsType)ui<span class="operator">-</span><span class="operator">&gt;</span>stopBitsBox<span class="operator">-</span><span class="operator">&gt;</span>itemData(idx)<span class="operator">.</span>toInt());
+    }
+
+    <span class="type">void</span> Dialog<span class="operator">::</span>onQueryModeChanged(<span class="type">int</span> idx)
+    {
+        port<span class="operator">-</span><span class="operator">&gt;</span>setQueryMode((QextSerialPort<span class="operator">::</span>QueryMode)ui<span class="operator">-</span><span class="operator">&gt;</span>queryModeBox<span class="operator">-</span><span class="operator">&gt;</span>itemData(idx)<span class="operator">.</span>toInt());
+    }
+
+    <span class="type">void</span> Dialog<span class="operator">::</span>onTimeoutChanged(<span class="type">int</span> val)
+    {
+        port<span class="operator">-</span><span class="operator">&gt;</span>setTimeout(val);
+    }</pre>
+<p>Open or Close the port.</p>
+<pre class="cpp">    <span class="type">void</span> Dialog<span class="operator">::</span>onOpenCloseButtonClicked()
+    {
+        <span class="keyword">if</span> (<span class="operator">!</span>port<span class="operator">-</span><span class="operator">&gt;</span>isOpen()) {
+            port<span class="operator">-</span><span class="operator">&gt;</span>setPortName(ui<span class="operator">-</span><span class="operator">&gt;</span>portBox<span class="operator">-</span><span class="operator">&gt;</span>currentText());
+            port<span class="operator">-</span><span class="operator">&gt;</span>open(<span class="type"><a href="http://qt.nokia.com/doc/4.8/qiodevice.html">QIODevice</a></span><span class="operator">::</span>ReadWrite);
+        }
+        <span class="keyword">else</span> {
+            port<span class="operator">-</span><span class="operator">&gt;</span>close();
+        }
+
+        <span class="comment">//If using polling mode, we need a QTimer</span>
+        <span class="keyword">if</span> (port<span class="operator">-</span><span class="operator">&gt;</span>isOpen() <span class="operator">&amp;</span><span class="operator">&amp;</span> port<span class="operator">-</span><span class="operator">&gt;</span>queryMode() <span class="operator">=</span><span class="operator">=</span> QextSerialPort<span class="operator">::</span>Polling)
+            timer<span class="operator">-</span><span class="operator">&gt;</span>start();
+        <span class="keyword">else</span>
+            timer<span class="operator">-</span><span class="operator">&gt;</span>stop();
+
+        <span class="comment">//update led's status</span>
+        ui<span class="operator">-</span><span class="operator">&gt;</span>led<span class="operator">-</span><span class="operator">&gt;</span>turnOn(port<span class="operator">-</span><span class="operator">&gt;</span>isOpen());
+    }</pre>
+<p>Read from or Write to the port</p>
+<pre class="cpp">    <span class="type">void</span> Dialog<span class="operator">::</span>onSendButtonClicked()
+    {
+        <span class="keyword">if</span> (port<span class="operator">-</span><span class="operator">&gt;</span>isOpen() <span class="operator">&amp;</span><span class="operator">&amp;</span> <span class="operator">!</span>ui<span class="operator">-</span><span class="operator">&gt;</span>sendEdit<span class="operator">-</span><span class="operator">&gt;</span>toPlainText()<span class="operator">.</span>isEmpty())
+            port<span class="operator">-</span><span class="operator">&gt;</span>write(ui<span class="operator">-</span><span class="operator">&gt;</span>sendEdit<span class="operator">-</span><span class="operator">&gt;</span>toPlainText()<span class="operator">.</span>toLatin1());
+    }
+
+    <span class="type">void</span> Dialog<span class="operator">::</span>onReadyRead()
+    {
+        <span class="keyword">if</span> (port<span class="operator">-</span><span class="operator">&gt;</span>bytesAvailable()) {
+            ui<span class="operator">-</span><span class="operator">&gt;</span>recvEdit<span class="operator">-</span><span class="operator">&gt;</span>moveCursor(<span class="type"><a href="http://qt.nokia.com/doc/4.8/qtextcursor.html">QTextCursor</a></span><span class="operator">::</span>End);
+            ui<span class="operator">-</span><span class="operator">&gt;</span>recvEdit<span class="operator">-</span><span class="operator">&gt;</span>insertPlainText(<span class="type"><a href="http://qt.nokia.com/doc/4.8/qstring.html">QString</a></span><span class="operator">::</span>fromLatin1(port<span class="operator">-</span><span class="operator">&gt;</span>readAll()));
+        }
+    }</pre>
+<p class="centerAlign"><img src="images/uartassistant.png" alt="" /></p></div>
+<!-- @@@examples/uartassistant -->
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="40%" align="left">Copyright &copy; 2000-2012</td>
+<td width="20%" align="center"><a href="http://code.google.com/p/qextserialport">QextSerialPort Project</a></td>
+<td width="40%" align="right"><div align="right">QextSerialPort Manual</div></td>
+</tr></table></div></address></body>
+</html>

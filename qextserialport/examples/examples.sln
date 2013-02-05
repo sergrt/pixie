@@ -1,0 +1,40 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "qespta", "C:/Qt/qextserialport/examples/qespta\qespta.vcxproj", "{E75E2BBF-C7CB-333C-8219-6CD7D5DB1B24}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "enumerator", "C:/Qt/qextserialport/examples/enumerator\enumerator.vcxproj", "{046EC751-83AB-3A43-B09F-4A4C79D8B5DE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "uartassistant", "C:/Qt/qextserialport/examples/uartassistant\uartassistant.vcxproj", "{6A2B2460-40BA-31A7-9703-1722AC331B6D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "event", "C:/Qt/qextserialport/examples/event\event.vcxproj", "{CE47B429-0A82-3B84-AAE1-D301B1A3AFA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug|Win32
+		ConfigName.1 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{E75E2BBF-C7CB-333C-8219-6CD7D5DB1B24}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E75E2BBF-C7CB-333C-8219-6CD7D5DB1B24}.Debug|Win32.Build.0 = Debug|Win32
+		{E75E2BBF-C7CB-333C-8219-6CD7D5DB1B24}.Release|Win32.ActiveCfg = Release|Win32
+		{E75E2BBF-C7CB-333C-8219-6CD7D5DB1B24}.Release|Win32.Build.0 = Release|Win32
+		{046EC751-83AB-3A43-B09F-4A4C79D8B5DE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{046EC751-83AB-3A43-B09F-4A4C79D8B5DE}.Debug|Win32.Build.0 = Debug|Win32
+		{046EC751-83AB-3A43-B09F-4A4C79D8B5DE}.Release|Win32.ActiveCfg = Release|Win32
+		{046EC751-83AB-3A43-B09F-4A4C79D8B5DE}.Release|Win32.Build.0 = Release|Win32
+		{6A2B2460-40BA-31A7-9703-1722AC331B6D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6A2B2460-40BA-31A7-9703-1722AC331B6D}.Debug|Win32.Build.0 = Debug|Win32
+		{6A2B2460-40BA-31A7-9703-1722AC331B6D}.Release|Win32.ActiveCfg = Release|Win32
+		{6A2B2460-40BA-31A7-9703-1722AC331B6D}.Release|Win32.Build.0 = Release|Win32
+		{CE47B429-0A82-3B84-AAE1-D301B1A3AFA1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CE47B429-0A82-3B84-AAE1-D301B1A3AFA1}.Debug|Win32.Build.0 = Debug|Win32
+		{CE47B429-0A82-3B84-AAE1-D301B1A3AFA1}.Release|Win32.ActiveCfg = Release|Win32
+		{CE47B429-0A82-3B84-AAE1-D301B1A3AFA1}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

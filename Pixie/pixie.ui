@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PixieClass</class>
+ <widget class="QMainWindow" name="PixieClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>608</width>
+    <height>542</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Pixie</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="pixie.qrc">
+    <normaloff>:/Pixie/Resources/Pixie_32x32.ico</normaloff>:/Pixie/Resources/Pixie_32x32.ico</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout_5">
+    <item row="1" column="1">
+     <widget class="QPushButton" name="bnStartStop">
+      <property name="text">
+       <string>Запустить</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>324</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Основные настройки</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QGroupBox" name="groupRegions">
+          <property name="title">
+           <string>Конфигурация областей</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout">
+           <item row="0" column="2">
+            <widget class="QLabel" name="label_4">
+             <property name="text">
+              <string>% вертикали экрана</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Количество диодов по горизонтали:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="leNHoriz">
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="text">
+              <string>20</string>
+             </property>
+             <property name="maxLength">
+              <number>3</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Количество диодов по вертикали:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="leNVert">
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="text">
+              <string>10</string>
+             </property>
+             <property name="maxLength">
+              <number>3</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLineEdit" name="leHorizontalHeightP">
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="text">
+              <string>5</string>
+             </property>
+             <property name="maxLength">
+              <number>2</number>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="label_5">
+             <property name="text">
+              <string>% горизонтали экрана</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLineEdit" name="leVerticalWidthP">
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="text">
+              <string>5</string>
+             </property>
+             <property name="maxLength">
+              <number>2</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupCapture">
+          <property name="title">
+           <string>Настройки захвата</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3" rowstretch="1,0,0">
+           <item row="2" column="0" colspan="2">
+            <widget class="QFrame" name="frame">
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,1">
+              <property name="leftMargin">
+               <number>5</number>
+              </property>
+              <property name="topMargin">
+               <number>5</number>
+              </property>
+              <property name="rightMargin">
+               <number>5</number>
+              </property>
+              <property name="bottomMargin">
+               <number>5</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>Частота обновления:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="leFrameRate">
+                <property name="inputMask">
+                 <string/>
+                </property>
+                <property name="text">
+                 <string>30</string>
+                </property>
+                <property name="maxLength">
+                 <number>3</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QRadioButton" name="bnGDI">
+             <property name="text">
+              <string>GDI</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QRadioButton" name="bnDirectX">
+             <property name="text">
+              <string>DirectX</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1" rowspan="2">
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>322</width>
+               <height>58</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="bnPreviewEnabled">
+          <property name="title">
+           <string>Предпросмотр обработки</string>
+          </property>
+          <property name="flat">
+           <bool>false</bool>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="0" column="0">
+            <widget class="QFrame" name="framePreview">
+             <property name="minimumSize">
+              <size>
+               <width>150</width>
+               <height>150</height>
+              </size>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::NoFrame</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout"/>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="labelFrameRate">
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabProcessing">
+       <attribute name="title">
+        <string>Обработка</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_10" columnstretch="1,0">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupColorControl">
+          <property name="title">
+           <string>Управление цветом</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_8" columnstretch="1,4,1,0">
+           <item row="2" column="2">
+            <widget class="QLabel" name="lG">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="2">
+            <widget class="QLabel" name="lB">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="lGamma">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSlider" name="sGamma">
+             <property name="minimum">
+              <number>-100</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_8">
+             <property name="text">
+              <string>Общая яркость</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSlider" name="sR">
+             <property name="minimum">
+              <number>-100</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QSlider" name="sB">
+             <property name="minimum">
+              <number>-100</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="tickPosition">
+              <enum>QSlider::NoTicks</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_11">
+             <property name="text">
+              <string>B</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QSlider" name="sG">
+             <property name="minimum">
+              <number>-100</number>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_9">
+             <property name="text">
+              <string>R</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_10">
+             <property name="text">
+              <string>G</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="lR">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3" rowspan="4">
+            <spacer name="horizontalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Expanding</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1" rowspan="2">
+         <spacer name="horizontalSpacer_7">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>113</width>
+            <height>158</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0">
+         <widget class="QGroupBox" name="groupCompression">
+          <property name="title">
+           <string>Ограничители</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_9" columnstretch="1,4,1,0">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_12">
+             <property name="text">
+              <string>Порог срабатывания</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSlider" name="sThreshold">
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLabel" name="lThreshold">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3" rowspan="2">
+            <spacer name="horizontalSpacer_8">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>58</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string>Ограничитель сверху</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSlider" name="sLimitter">
+             <property name="maximum">
+              <number>255</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="2">
+            <widget class="QLabel" name="lLimitter">
+             <property name="text">
+              <string>0</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="2">
+         <spacer name="verticalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>568</width>
+            <height>198</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Обмен</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_6" rowstretch="0,0" columnstretch="1,0">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupComm">
+          <property name="title">
+           <string>COM-порт</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="text">
+              <string>Порт:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QComboBox" name="cbPort"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_7">
+             <property name="text">
+              <string>Скорость обмена:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QComboBox" name="cbBaud"/>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>218</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QTextEdit" name="textEdit">
+          <property name="html">
+           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;C++ code colored by C++2HTML&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.15094pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; font-style:italic; color:#999999;&quot;&gt;/*** ARDUINO CODE FOR PIXEL LIGHT ***/&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#000099;&quot;&gt;#include &amp;lt;SPI.h&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#000099;&quot;&gt;#include &amp;lt;SmallUart.h&amp;gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier New,courier'; font-size:8pt; color:#000099;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff6633;&quot;&gt;unsigned long&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; lastTime&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt;  // Time strip was updated last time&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#990000;&quot;&gt;const&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff6633;&quot;&gt; unsigned long&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; fadeTimeout&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt; 3000&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt;////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt;//&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff6633;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; setup&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;() {&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  UART_Init&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt;115200&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;);&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  SPI&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;begin&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;();&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  SPI&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;setBitOrder&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;MSBFIRST&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;);&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  SPI&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;setDataMode&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;SPI_MODE0&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;);&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  SPI&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;setClockDivider&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;SPI_CLOCK_DIV8&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;);&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  blackoutAll&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;();&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  delay&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;);&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  lastTime&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; millis&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;();&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;}&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt;////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt;//&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff6633;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; loop&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;() {&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  uint8_t data&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  UART_SendByte&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#009900;&quot;&gt; 'R'&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; );&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt; // Byte &amp;quot;We're ready&amp;quot;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff6633;&quot;&gt;  bool&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; valid&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#000000;&quot;&gt; false&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  data&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; uartRead&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; valid&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; );&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt;  if&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; (&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; valid&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; ) {&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;    uint16_t pix_num&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; data&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; *&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt; 3&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt; // Total following bytes&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt;    for&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; uint16_t i&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;=&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt;0&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; i&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; &amp;lt;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; pix_num&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; i&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;++ ) {&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;      data&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; uartRead&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; valid&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; );&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt;      if&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; ( !&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;valid&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; )&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt;        break&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;      SPI&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;transfer&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; data&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; );&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt; // Transfer byte to SPI&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;    }&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;    lastTime&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; millis&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;();&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;  }&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt;  &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt;  if&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; (&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; millis&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;() -&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; lastTime&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; &amp;gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; fadeTimeout&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; )&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;    blackoutAll&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;();&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;}&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt;////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt;// Turn off all possible 256 leds&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff6633;&quot;&gt;void&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; blackoutAll&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;() {&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt;  for&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; (&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; int16_t i&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt; 0&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; i&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; &amp;lt;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt; 768&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; i&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;++ )&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;    SPI&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;.&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;transfer&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt; 0&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; );&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt; //погасить все пикселы ленты&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;}&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt;////////////////////////////////////////////////////////////&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt;// Read byte with timeout&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff6633;&quot;&gt;unsigned char&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; uartRead&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff6633;&quot;&gt; bool&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; valid&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; ) {&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  uint8_t res&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt; 0&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;  valid&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#000000;&quot;&gt; false&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt;  for&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; (&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; uint8_t i&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt; 0&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; i&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; &amp;lt;&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt; 255&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;; ++&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;i&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; ) {&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-style:italic; color:#999999;&quot;&gt; // Max timeout 256*10&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt;    if&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; UART_ReadByte&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; res&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; ) ) {&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;      valid&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt; =&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#000000;&quot;&gt; true&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt;      break&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;    }&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt;    delayMicroseconds&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#999900;&quot;&gt;10&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;);&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;  }&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; color:#ff0000;&quot;&gt;  return&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; res&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;;&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt; font-weight:600; color:#663300;&quot;&gt;}&lt;/span&gt;&lt;span style=&quot; font-family:'Courier New,courier'; font-size:8pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="textInteractionFlags">
+           <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Прочее</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_7" columnstretch="1,0">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="title">
+           <string>Настройки программы</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_11" columnstretch="0,1">
+           <item row="2" column="1">
+            <widget class="QComboBox" name="cbLanguage"/>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_13">
+             <property name="text">
+              <string>Language</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0" colspan="2">
+            <widget class="QCheckBox" name="bnStartMinimized">
+             <property name="text">
+              <string>Запускать свернутым</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0" colspan="2">
+            <widget class="QCheckBox" name="bnAutoStart">
+             <property name="text">
+              <string>Автозапуск захвата</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>328</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <spacer name="verticalSpacer_2">
+          <property name="orientation">
+           <enum>Qt::Vertical</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>508</width>
+            <height>338</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>608</width>
+     <height>19</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="pixie.qrc"/>
+ </resources>
+ <connections/>
+</ui>

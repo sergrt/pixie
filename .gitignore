@@ -1,0 +1,10 @@
+Win32/Debug
+Win32/Release/*.dll
+Win32/Release/*.lib
+ipch/
+Pixie/Debug
+Pixie/Release
+Pixie/GeneratedFiles
+qextserialport/buildlib/debug
+qextserialport/buildlib/release
+pixie.sdf
