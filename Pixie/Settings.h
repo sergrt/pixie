@@ -35,6 +35,9 @@ namespace INIFILE {
 	const QString useCompression		= "useCompression";
 	const QString threshold				= "threshold";
 	const QString limitter				= "limitter";
+	const QString useGrouping			= "useGrouping";
+	const QString groupHorizontal		= "groupHorizontal";
+	const QString groupVertical			= "groupVertical";
 }
 
 class CSettings {
@@ -72,6 +75,10 @@ public:
 	bool useCompression;				// Use (or not) color threshold and limitting
 	int threshold;						// Threshold value
 	int limitter;						// Limitter value
+
+	bool useGrouping;
+	unsigned short groupHorizontal;
+	unsigned short groupVertical;
 
 	enum LANG {
 		RUSSIAN_RU = 0,

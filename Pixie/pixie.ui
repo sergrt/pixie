@@ -44,7 +44,7 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <widget class="QWidget" name="tab">
+      <widget class="QWidget" name="tabMain">
        <attribute name="title">
         <string>Основные настройки</string>
        </attribute>
@@ -282,7 +282,7 @@
        <attribute name="title">
         <string>Обработка</string>
        </attribute>
-       <layout class="QGridLayout" name="gridLayout_10" columnstretch="1,0">
+       <layout class="QGridLayout" name="gridLayout_12" columnstretch="1,0">
         <item row="0" column="0">
          <widget class="QGroupBox" name="groupColorControl">
           <property name="title">
@@ -422,7 +422,7 @@
           </layout>
          </widget>
         </item>
-        <item row="0" column="1" rowspan="2">
+        <item row="0" column="1" rowspan="3">
          <spacer name="horizontalSpacer_7">
           <property name="orientation">
            <enum>Qt::Horizontal</enum>
@@ -511,7 +511,60 @@
           </layout>
          </widget>
         </item>
-        <item row="2" column="0" colspan="2">
+        <item row="2" column="0">
+         <widget class="QGroupBox" name="groupGrouping">
+          <property name="title">
+           <string>Объединение зон</string>
+          </property>
+          <property name="checkable">
+           <bool>true</bool>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_10" columnstretch="0,1,2" rowminimumheight="0,0">
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="sbGroupV">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="sbGroupH">
+             <property name="minimum">
+              <number>1</number>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2" rowspan="2">
+            <spacer name="horizontalSpacer_9">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_16">
+             <property name="text">
+              <string>По вертикали</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_15">
+             <property name="text">
+              <string>По горизонтали</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="3" column="0" colspan="2">
          <spacer name="verticalSpacer_3">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
@@ -526,7 +579,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
+      <widget class="QWidget" name="tabComm">
        <attribute name="title">
         <string>Обмен</string>
        </attribute>
@@ -651,7 +704,7 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="tab_3">
+      <widget class="QWidget" name="tabMisc">
        <attribute name="title">
         <string>Прочее</string>
        </attribute>

@@ -56,6 +56,7 @@ private:
 	
 	void applyProcessing();											// Apply color modifications - gamma etc.
 	void processZone( QList< QColor >& colorZone );					// Apply color modifications to specified zone
+	void processGrouping( QList< QColor >& colorZone, const unsigned short group );		// Apply pixel grouping
 	int colorInRange( const int oldColor, const int delta ) const;	// Adjust oldColor by delta within range 0-255
 	QColor getAverageColor( const unsigned char * const buf, const unsigned short width, const unsigned short height ) const;	// Calculate average color of segment
 	void selectComboBoxItemByData( QComboBox * cb, const QVariant val );	// Simply selects Combo box item by it's data

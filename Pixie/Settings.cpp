@@ -25,6 +25,11 @@ CSettings::CSettings() {
 	useCompression	= false;
 	threshold		= 0;
 	limitter		= 255;
+
+	useGrouping		= false;
+	groupHorizontal	= 1;
+	groupVertical	= 1;
+
 	language		= ENGLISH_US;
 }
 CSettings::~CSettings() {
@@ -56,6 +61,10 @@ void CSettings::loadSettings() {
 	useCompression = stgs.value( INIFILE::useCompression ).toBool();
 	threshold = stgs.value( INIFILE::threshold ).toInt();
 	limitter = stgs.value( INIFILE::limitter ).toInt();
+	useGrouping = stgs.value( INIFILE::useGrouping ).toBool();
+	groupHorizontal = stgs.value( INIFILE::groupHorizontal ).toUInt();
+	groupVertical = stgs.value( INIFILE::groupVertical ).toUInt();
+
 	stgs.endGroup();
 }
 void CSettings::saveSettings() {
@@ -85,6 +94,9 @@ void CSettings::saveSettings() {
 	stgs.setValue( INIFILE::useCompression, useCompression );
 	stgs.setValue( INIFILE::threshold, threshold );
 	stgs.setValue( INIFILE::limitter, limitter );
+	stgs.setValue( INIFILE::useGrouping, useGrouping );
+	stgs.setValue( INIFILE::groupHorizontal, groupHorizontal );
+	stgs.setValue( INIFILE::groupVertical, groupVertical );
 
 	stgs.endGroup();
 }

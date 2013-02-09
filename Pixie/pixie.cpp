@@ -116,6 +116,10 @@ void Pixie::applySettingsFromUI() {
 	settings.threshold = ui.sThreshold->value();
 	settings.limitter = ui.sLimitter->value();
 	settings.useCompression = ui.groupCompression->isChecked();
+
+	settings.groupHorizontal = ui.sbGroupH->value();
+	settings.groupVertical = ui.sbGroupV->value();
+	settings.useGrouping = ui.groupGrouping->isChecked();
 }
 void Pixie::applySettingsToUI() {
 	ui.leNHoriz->setText( QString( "%1" ).arg( settings.LEDnumH ) );
@@ -143,6 +147,10 @@ void Pixie::applySettingsToUI() {
 	ui.sThreshold->setValue( settings.threshold );
 	ui.sLimitter->setValue( settings.limitter );
 	ui.groupCompression->setChecked( settings.useCompression );
+	ui.sbGroupH->setValue( settings.groupHorizontal );
+	ui.sbGroupV->setValue( settings.groupVertical );
+	ui.groupGrouping->setChecked( settings.useGrouping );
+
 }
 void Pixie::onStartStopClick() {
 	stopThread = !stopThread;
@@ -385,11 +393,39 @@ void Pixie::processZone( QList< QColor >& colorZone ) {
 		}
 	}
 }
+void Pixie::processGrouping( QList< QColor >& colorZone, const unsigned short group ) {
+	unsigned short zoneCount = ceil( colorZone.count() / static_cast< double >( group ) );			
+	for ( int i = 0; i < zoneCount; i++ ) {
+		int avgR = colorZone.at( i * group ).red();
+		int avgG = colorZone.at( i * group ).green();
+		int avgB = colorZone.at( i * group ).blue();
+		int j = 1;
+		while ( j < group && i * group + j < colorZone.count() ) {
+			avgR += colorZone.at( i * group + j ).red();
+			avgG += colorZone.at( i * group + j ).green();
+			avgB += colorZone.at( i * group + j ).blue();
+			j++;
+		}
+		QColor clAvg( avgR / group, avgG / group, avgB / group );
+		j = 0;
+		while ( j < group && i * group + j < colorZone.count() ) {
+			colorZone[ i * group + j ] = clAvg;
+			j++;
+		}
+	}
+}
 void Pixie::applyProcessing() {	
 	processZone( colorVLeft );
 	processZone( colorVRight );
 	processZone( colorHTop );
 	processZone( colorHBottom );
+
+	if ( ui.groupGrouping->isChecked() ) {
+		processGrouping( colorVLeft, ui.sbGroupV->value() );
+		processGrouping( colorVRight, ui.sbGroupV->value() );
+		processGrouping( colorHTop, ui.sbGroupH->value() );
+		processGrouping( colorHBottom, ui.sbGroupH->value() );		
+	}
 }
 void Pixie::sendToArduino() {
 	if( port && port->isOpen() ) {
@@ -417,7 +453,8 @@ void Pixie::sendToArduino() {
 			arr[ index++ ] = (char)colorHBottom.at( i ).red();
 			arr[ index++ ] = (char)colorHBottom.at( i ).green();
 			arr[ index++ ] = (char)colorHBottom.at( i ).blue();
-		}		
+		}
+
 
 		while( true ) {
 			QByteArray ba = port->readAll();
