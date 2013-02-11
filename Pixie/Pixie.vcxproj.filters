@@ -85,6 +85,9 @@
     <ClCompile Include="Regions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UniCaptureThread.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="pixie.h">
@@ -136,5 +139,10 @@
     <ResourceCompile Include="pixie.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UniCaptureThread.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,6 +3,7 @@
 #include "helpers.h"
 #include "GDISimpleThread.h"
 #include "DXSimpleThread.h"
+#include "UniCaptureThread.h"
 
 /*** define USE_LAB to use LAB colors - NOT RECOMMENDED ***/
 // #define USE_LAB
@@ -97,8 +98,10 @@ void Pixie::applySettingsFromUI() {
 
 	if ( ui.bnGDI->isChecked() )
 		settings.captureEngine = CSettings::CE_GDI;
-	else
+	else if ( ui.bnDirectX->isChecked() )
 		settings.captureEngine = CSettings::CE_DX;
+	else if ( ui.bnQt->isChecked() )
+		settings.captureEngine = CSettings::CE_QT;
 
 	settings.desiredFramerate = ui.leFrameRate->text().toUInt();
 	settings.autoStart = ui.bnAutoStart->isChecked();
@@ -128,7 +131,8 @@ void Pixie::applySettingsToUI() {
 	ui.leVerticalWidthP->setText( QString( "%1" ).arg( settings.verticalWidthP ) );
 
 	ui.bnGDI->setChecked( settings.captureEngine == CSettings::CE_GDI );
-	ui.bnDirectX->setChecked( settings.captureEngine != CSettings::CE_GDI );
+	ui.bnDirectX->setChecked( settings.captureEngine == CSettings::CE_DX );
+	ui.bnQt->setChecked( settings.captureEngine == CSettings::CE_QT );
 
 	ui.leFrameRate->setText( QString( "%1" ).arg( settings.desiredFramerate ) );
 	ui.bnAutoStart->setChecked( settings.autoStart );
@@ -180,8 +184,10 @@ void Pixie::onStartStopClick() {
 
 			if ( ui.bnGDI->isChecked() )
 				captureThread = new CGDISimpleThread( this, &stopThread, &settings, &readyToProcess );
-			else
+			else if ( ui.bnDirectX->isChecked() )
 				captureThread = new CDXSimpleThread( this, &stopThread, &settings, &readyToProcess );
+			else if ( ui.bnQt->isChecked() )
+				captureThread = new CUniCaptureThread( this, &stopThread, &settings, &readyToProcess, QApplication::desktop()->winId() );
 
 			captureThread->start();
 		}

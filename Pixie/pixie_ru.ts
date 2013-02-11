@@ -4,23 +4,23 @@
 <context>
     <name>Pixie</name>
     <message>
-        <location filename="pixie.cpp" line="31"/>
-        <location filename="pixie.cpp" line="603"/>
+        <location filename="pixie.cpp" line="32"/>
+        <location filename="pixie.cpp" line="606"/>
         <source>Âûõîä</source>
         <translation>Выход</translation>
     </message>
     <message>
-        <location filename="pixie.cpp" line="192"/>
+        <location filename="pixie.cpp" line="195"/>
         <source>Îñòàíîâèòü</source>
         <translation>Остановить</translation>
     </message>
     <message>
-        <location filename="pixie.cpp" line="194"/>
+        <location filename="pixie.cpp" line="197"/>
         <source>Çàïóñòèòü</source>
         <translation>Запустить</translation>
     </message>
     <message>
-        <location filename="pixie.cpp" line="572"/>
+        <location filename="pixie.cpp" line="575"/>
         <source>×àñòîòà îáíîâëåíèÿ = %1</source>
         <translation>Частота обновления = %1</translation>
     </message>
@@ -89,131 +89,136 @@
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="171"/>
+        <location filename="pixie.ui" line="162"/>
         <source>Частота обновления:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="pixie.ui" line="181"/>
+        <location filename="pixie.ui" line="172"/>
         <source>30</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="pixie.ui" line="207"/>
+        <location filename="pixie.ui" line="198"/>
         <source>GDI</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="pixie.ui" line="217"/>
+        <location filename="pixie.ui" line="208"/>
         <source>DirectX</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="pixie.ui" line="215"/>
+        <source>Qt crossplatform</source>
+        <translation type="unfinished"></translation>
+    </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="240"/>
+        <location filename="pixie.ui" line="238"/>
         <source>Предпросмотр обработки</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="pixie.ui" line="272"/>
+        <location filename="pixie.ui" line="270"/>
         <source>TextLabel</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="283"/>
+        <location filename="pixie.ui" line="281"/>
         <source>Обработка</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="289"/>
+        <location filename="pixie.ui" line="287"/>
         <source>Управление цветом</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="pixie.ui" line="298"/>
-        <location filename="pixie.ui" line="305"/>
-        <location filename="pixie.ui" line="312"/>
-        <location filename="pixie.ui" line="402"/>
-        <location filename="pixie.ui" line="470"/>
-        <location filename="pixie.ui" line="507"/>
+        <location filename="pixie.ui" line="296"/>
+        <location filename="pixie.ui" line="303"/>
+        <location filename="pixie.ui" line="310"/>
+        <location filename="pixie.ui" line="400"/>
+        <location filename="pixie.ui" line="468"/>
+        <location filename="pixie.ui" line="505"/>
         <source>0</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="332"/>
+        <location filename="pixie.ui" line="330"/>
         <source>Общая яркость</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="pixie.ui" line="368"/>
+        <location filename="pixie.ui" line="366"/>
         <source>B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="pixie.ui" line="388"/>
+        <location filename="pixie.ui" line="386"/>
         <source>R</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="pixie.ui" line="395"/>
+        <location filename="pixie.ui" line="393"/>
         <source>G</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="441"/>
+        <location filename="pixie.ui" line="439"/>
         <source>Ограничители</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="453"/>
+        <location filename="pixie.ui" line="451"/>
         <source>Порог срабатывания</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="490"/>
+        <location filename="pixie.ui" line="488"/>
         <source>Ограничитель сверху</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="517"/>
+        <location filename="pixie.ui" line="515"/>
         <source>Объединение зон</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="553"/>
+        <location filename="pixie.ui" line="551"/>
         <source>По вертикали</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="560"/>
+        <location filename="pixie.ui" line="558"/>
         <source>По горизонтали</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="584"/>
+        <location filename="pixie.ui" line="582"/>
         <source>Обмен</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="590"/>
+        <location filename="pixie.ui" line="588"/>
         <source>COM-порт</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="596"/>
+        <location filename="pixie.ui" line="594"/>
         <source>Порт:</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="606"/>
+        <location filename="pixie.ui" line="604"/>
         <source>Скорость обмена:</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="632"/>
+        <location filename="pixie.ui" line="630"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;title&gt;C++ code colored by C++2HTML&lt;/title&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.15094pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;MS Shell Dlg 2&apos;; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Courier New,courier&apos;; font-size:8pt; font-weight:600; font-style:italic; color:#999999;&quot;&gt;/*** ARDUINO CODE FOR PIXEL LIGHT ***/&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Courier New,courier&apos;; font-size:8pt; color:#000099;&quot;&gt;#include &amp;lt;SPI.h&amp;gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Courier New,courier&apos;; font-size:8pt; color:#000099;&quot;&gt;#include &amp;lt;SmallUart.h&amp;gt;&lt;/span&gt;&lt;/p&gt;
@@ -280,27 +285,27 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="709"/>
+        <location filename="pixie.ui" line="707"/>
         <source>Прочее</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="715"/>
+        <location filename="pixie.ui" line="713"/>
         <source>Настройки программы</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="pixie.ui" line="724"/>
+        <location filename="pixie.ui" line="722"/>
         <source>Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="731"/>
+        <location filename="pixie.ui" line="729"/>
         <source>Запускать свернутым</source>
         <translation type="unfinished"></translation>
     </message>
     <message utf8="true">
-        <location filename="pixie.ui" line="738"/>
+        <location filename="pixie.ui" line="736"/>
         <source>Автозапуск захвата</source>
         <translation type="unfinished"></translation>
     </message>

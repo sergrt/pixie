@@ -55,7 +55,8 @@ public:
 
 	enum CAPTURE_ENGINE {
 		CE_GDI = 0,
-		CE_DX = 1
+		CE_DX = 1,
+		CE_QT = 2
 	};
 	CAPTURE_ENGINE captureEngine;
 	unsigned short desiredFramerate;

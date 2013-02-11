@@ -17,8 +17,7 @@ private:
 	virtual void init();
 	virtual void run();
 	virtual void cleanup();
-	void cleanupBuffers();
-	
+	void cleanupBuffers();	
 	void initBuffers();	// Buffers (re)initialization - in the beginning and every screen resolution change
 
 	HWND hDesktopWnd;	// Some
