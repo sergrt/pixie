@@ -254,9 +254,10 @@ QColor Pixie::getAverageColor( const unsigned char * const buf, const unsigned s
 
 	delete [] labColors;
 #else	// use simple RGB mean values
-	double B_avg = buf[ 0 ];
-	double G_avg = buf[ 1 ];
-	double R_avg = buf[ 2 ];
+	// 32-bit accumulator is enough for up to 4096x4096 region.
+	unsigned B_avg = buf[ 0 ];
+	unsigned G_avg = buf[ 1 ];
+	unsigned R_avg = buf[ 2 ];
 
 	for ( int y = 0; y < height; y++ ) {
 		for ( int x = 0; x < width; x++ ) {
