@@ -18,6 +18,11 @@ Pixie::Pixie(QWidget *parent, Qt::WindowFlags flags)
 	: QMainWindow(parent, flags) {
 	ui.setupUi(this);
 	
+#ifndef WIN32
+	ui.bnGDI->setEnabled(0);
+	ui.bnDirectX->setEnabled(0);
+#endif
+
 	// Set up comboboxes
 	for ( int i = 1; i <= 20; i++ )
 		ui.cbPort->addItem( QString( "COM%1" ).arg( i ), i );
