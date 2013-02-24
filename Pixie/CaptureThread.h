@@ -5,6 +5,7 @@
 //////////////////////////////////////////////////////////////////////////
 #pragma once
 #include <QThread>
+#include <QTime>
 #include "Regions.h"
 #include "Settings.h"
 

@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "pixie.h"
 #include "helpers.h"
+#include "UniCaptureThread.h"
+
+#ifdef WIN32
 #include "GDISimpleThread.h"
 #include "DXSimpleThread.h"
-#include "UniCaptureThread.h"
+#endif
 
 /*** define USE_LAB to use LAB colors - NOT RECOMMENDED ***/
 // #define USE_LAB
@@ -96,11 +99,13 @@ void Pixie::applySettingsFromUI() {
 	settings.horizontalHeightP = ui.leHorizontalHeightP->text().toUInt();
 	settings.verticalWidthP = ui.leVerticalWidthP->text().toUInt();
 
+#ifdef WIN32
 	if ( ui.bnGDI->isChecked() )
 		settings.captureEngine = CSettings::CE_GDI;
 	else if ( ui.bnDirectX->isChecked() )
 		settings.captureEngine = CSettings::CE_DX;
 	else if ( ui.bnQt->isChecked() )
+#endif
 		settings.captureEngine = CSettings::CE_QT;
 
 	settings.desiredFramerate = ui.leFrameRate->text().toUInt();
@@ -130,8 +135,10 @@ void Pixie::applySettingsToUI() {
 	ui.leHorizontalHeightP->setText( QString( "%1" ).arg( settings.horizontalHeightP ) );
 	ui.leVerticalWidthP->setText( QString( "%1" ).arg( settings.verticalWidthP ) );
 
+#ifdef WIN32
 	ui.bnGDI->setChecked( settings.captureEngine == CSettings::CE_GDI );
 	ui.bnDirectX->setChecked( settings.captureEngine == CSettings::CE_DX );
+#endif
 	ui.bnQt->setChecked( settings.captureEngine == CSettings::CE_QT );
 
 	ui.leFrameRate->setText( QString( "%1" ).arg( settings.desiredFramerate ) );
@@ -182,11 +189,13 @@ void Pixie::onStartStopClick() {
 			if ( port )
 				port->open( QIODevice::ReadWrite );
 
+#ifdef WIN32
 			if ( ui.bnGDI->isChecked() )
 				captureThread = new CGDISimpleThread( this, &stopThread, &settings, &readyToProcess );
 			else if ( ui.bnDirectX->isChecked() )
 				captureThread = new CDXSimpleThread( this, &stopThread, &settings, &readyToProcess );
 			else if ( ui.bnQt->isChecked() )
+#endif
 				captureThread = new CUniCaptureThread( this, &stopThread, &settings, &readyToProcess, QApplication::desktop()->winId() );
 
 			captureThread->start();
@@ -302,7 +311,7 @@ void Pixie::onImageCaptured( CRegions * regions ) {
 	colorVLeft.clear();
 	colorVRight.clear();
 
-	unsigned int hSize = regions->getHSize();
+	// unsigned int hSize = regions->getHSize();
 	for ( int i = 0; i < regions->regionHTop.count(); i++ ) {
 		//saveImg( QString( "ht_%1.bmp" ).arg( i ), regions->regionHTop.at( i ), hSize, regions->hWidth, regions->hHeight );
 		colorHTop.push_back( getAverageColor( regions->regionHTop.at( i ), regions->hWidth, regions->hHeight ) );
@@ -314,7 +323,7 @@ void Pixie::onImageCaptured( CRegions * regions ) {
 		delete [] regions->regionHBottom.at( i );
 	}
 
-	unsigned int vSize = regions->getVSize();
+	// unsigned int vSize = regions->getVSize();
 	for ( int i = 0; i < regions->regionVLeft.count(); i++ ) {
 		//saveImg( QString( "vl_%1.bmp" ).arg( i ), regions->regionVLeft.at( i ), vSize, regions->vWidth, regions->vHeight );
 		colorVLeft.push_back( getAverageColor( regions->regionVLeft.at( i ), regions->vWidth, regions->vHeight ) );
@@ -578,7 +587,7 @@ void Pixie::displayRefreshRate( int rate ) {
 	ui.labelFrameRate->setText( QString( tr( "Частота обновления = %1" ) ).arg( rate ) );
 }
 void Pixie::showHide( QSystemTrayIcon::ActivationReason reason ) {
-	if ( reason == QSystemTrayIcon::ActivationReason::DoubleClick )
+	if ( reason == QSystemTrayIcon::DoubleClick )
 		QMainWindow::setVisible( !isVisible() );
 }
 void Pixie::onPreviewClick() {

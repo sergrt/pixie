@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "DXSimpleThread.h"
 
 CDXSimpleThread::CDXSimpleThread( QWidget *parent, bool *stopThread, CSettings *settings, bool *readyToProcess )

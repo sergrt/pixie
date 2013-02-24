@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "GDISimpleThread.h"
 
 CGDISimpleThread::CGDISimpleThread( QWidget *parent, bool *stopThread, CSettings *settings, bool *readyToProcess )
