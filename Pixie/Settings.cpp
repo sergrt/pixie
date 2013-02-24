@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "Settings.h"
 #include <QSettings>
 #include "helpers.h"

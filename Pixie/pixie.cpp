@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "pixie.h"
 #include "helpers.h"
+#include "UniCaptureThread.h"
+
+#ifdef WIN32
 #include "GDISimpleThread.h"
 #include "DXSimpleThread.h"
-#include "UniCaptureThread.h"
+#endif
 
 /*** define USE_LAB to use LAB colors - NOT RECOMMENDED ***/
 // #define USE_LAB
@@ -15,6 +18,11 @@ Pixie::Pixie(QWidget *parent, Qt::WindowFlags flags)
 	: QMainWindow(parent, flags) {
 	ui.setupUi(this);
 	
+#ifndef WIN32
+	ui.bnGDI->setEnabled(0);
+	ui.bnDirectX->setEnabled(0);
+#endif
+
 	// Set up comboboxes
 	for ( int i = 1; i <= 20; i++ )
 		ui.cbPort->addItem( QString( "COM%1" ).arg( i ), i );
@@ -96,11 +104,13 @@ void Pixie::applySettingsFromUI() {
 	settings.horizontalHeightP = ui.leHorizontalHeightP->text().toUInt();
 	settings.verticalWidthP = ui.leVerticalWidthP->text().toUInt();
 
+#ifdef WIN32
 	if ( ui.bnGDI->isChecked() )
 		settings.captureEngine = CSettings::CE_GDI;
 	else if ( ui.bnDirectX->isChecked() )
 		settings.captureEngine = CSettings::CE_DX;
 	else if ( ui.bnQt->isChecked() )
+#endif
 		settings.captureEngine = CSettings::CE_QT;
 
 	settings.desiredFramerate = ui.leFrameRate->text().toUInt();
@@ -130,8 +140,10 @@ void Pixie::applySettingsToUI() {
 	ui.leHorizontalHeightP->setText( QString( "%1" ).arg( settings.horizontalHeightP ) );
 	ui.leVerticalWidthP->setText( QString( "%1" ).arg( settings.verticalWidthP ) );
 
+#ifdef WIN32
 	ui.bnGDI->setChecked( settings.captureEngine == CSettings::CE_GDI );
 	ui.bnDirectX->setChecked( settings.captureEngine == CSettings::CE_DX );
+#endif
 	ui.bnQt->setChecked( settings.captureEngine == CSettings::CE_QT );
 
 	ui.leFrameRate->setText( QString( "%1" ).arg( settings.desiredFramerate ) );
@@ -182,11 +194,13 @@ void Pixie::onStartStopClick() {
 			if ( port )
 				port->open( QIODevice::ReadWrite );
 
+#ifdef WIN32
 			if ( ui.bnGDI->isChecked() )
 				captureThread = new CGDISimpleThread( this, &stopThread, &settings, &readyToProcess );
 			else if ( ui.bnDirectX->isChecked() )
 				captureThread = new CDXSimpleThread( this, &stopThread, &settings, &readyToProcess );
 			else if ( ui.bnQt->isChecked() )
+#endif
 				captureThread = new CUniCaptureThread( this, &stopThread, &settings, &readyToProcess, QApplication::desktop()->winId() );
 
 			captureThread->start();
@@ -240,9 +254,10 @@ QColor Pixie::getAverageColor( const unsigned char * const buf, const unsigned s
 
 	delete [] labColors;
 #else	// use simple RGB mean values
-	double B_avg = buf[ 0 ];
-	double G_avg = buf[ 1 ];
-	double R_avg = buf[ 2 ];
+	// 32-bit accumulator is enough for up to 4096x4096 region.
+	unsigned B_avg = buf[ 0 ];
+	unsigned G_avg = buf[ 1 ];
+	unsigned R_avg = buf[ 2 ];
 
 	for ( int y = 0; y < height; y++ ) {
 		for ( int x = 0; x < width; x++ ) {
@@ -302,7 +317,7 @@ void Pixie::onImageCaptured( CRegions * regions ) {
 	colorVLeft.clear();
 	colorVRight.clear();
 
-	unsigned int hSize = regions->getHSize();
+	// unsigned int hSize = regions->getHSize();
 	for ( int i = 0; i < regions->regionHTop.count(); i++ ) {
 		//saveImg( QString( "ht_%1.bmp" ).arg( i ), regions->regionHTop.at( i ), hSize, regions->hWidth, regions->hHeight );
 		colorHTop.push_back( getAverageColor( regions->regionHTop.at( i ), regions->hWidth, regions->hHeight ) );
@@ -314,7 +329,7 @@ void Pixie::onImageCaptured( CRegions * regions ) {
 		delete [] regions->regionHBottom.at( i );
 	}
 
-	unsigned int vSize = regions->getVSize();
+	// unsigned int vSize = regions->getVSize();
 	for ( int i = 0; i < regions->regionVLeft.count(); i++ ) {
 		//saveImg( QString( "vl_%1.bmp" ).arg( i ), regions->regionVLeft.at( i ), vSize, regions->vWidth, regions->vHeight );
 		colorVLeft.push_back( getAverageColor( regions->regionVLeft.at( i ), regions->vWidth, regions->vHeight ) );
@@ -578,7 +593,7 @@ void Pixie::displayRefreshRate( int rate ) {
 	ui.labelFrameRate->setText( QString( tr( "Частота обновления = %1" ) ).arg( rate ) );
 }
 void Pixie::showHide( QSystemTrayIcon::ActivationReason reason ) {
-	if ( reason == QSystemTrayIcon::ActivationReason::DoubleClick )
+	if ( reason == QSystemTrayIcon::DoubleClick )
 		QMainWindow::setVisible( !isVisible() );
 }
 void Pixie::onPreviewClick() {

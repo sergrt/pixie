@@ -1,4 +1,4 @@
-#include "StdAfx.h"
+#include "stdafx.h"
 #include "UniCaptureThread.h"
 
 CUniCaptureThread::CUniCaptureThread( QWidget *parent, bool *stopThread, CSettings *settings, bool *readyToProcess, const int d ) 
