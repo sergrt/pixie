@@ -7,4 +7,5 @@ Pixie/Release
 Pixie/GeneratedFiles
 qextserialport/buildlib/debug
 qextserialport/buildlib/release
-pixie.sdf
+/*.*sdf
+/*.suo
